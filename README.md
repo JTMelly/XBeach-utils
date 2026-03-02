@@ -38,3 +38,6 @@ The above list is not comprehensive; a *yaml* file may be forthcoming as time pe
 
 ## Compare XBeach models
 Use `CompareModelsXB.py` to compare the results of all the models produced by `IterateXBeach.py`, above. This script scans through all of the *NetCDF* output files in a directory and extracts the solutions at some desired coordinates and for a given timestep. These values are gathered in a dataframe for comparison against expected values and/or graphical visualizaion. 
+
+## Make tides
+Take a tide file and hammer it into a format that XBeach likes. Tide files may come from other tools such as [Coastsat](https://github.com/kvos/CoastSat) or [PyFes](https://github.com/CNES/aviso-fes). Here, two cases are covered: 1) a simple tide that rises and falls evenly across the offshore boundary; 2) offshore boundary corners out of phase inducing longshore currents (assumes rectangular domain).

@@ -1,5 +1,5 @@
 # generate tide files that XBeach can read
-# takes a tide.csv file as input, usually created by some other tool such as CoastSat (https://github.com/kvos/CoastSat), of PyFES (https://github.com/CNES/aviso-fes)
+# takes a tide.csv file as input, usually created by some other tool such as CoastSat (https://github.com/kvos/CoastSat), or PyFES (https://github.com/CNES/aviso-fes)
 # two versions below: 1) simple tide moves perpendicular to shore, 2) model corners offshore out of phase inducing tidal currents
 
 
