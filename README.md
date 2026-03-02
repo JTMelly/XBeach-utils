@@ -44,9 +44,19 @@ Take a tide table and hammer it into a format that XBeach likes. Tide files may 
 Use `CompareModelsXB.py` to compare the results of all the models produced by `IterateXBeach.py`, above. This script scans through all of the *NetCDF* output files in a directory and extracts the solutions at some desired coordinates and for a given timestep. These values are gathered in a dataframe for comparison against expected values and/or graphical visualizaion. 
 
 ## Visualize outputs
-Plots *xboutput.nc* results including: 
+`VisualizeOutputs.py` plots *xboutput.nc* results including: 
 1) initial terrain and bathymetry, 
 2) timeseries of variable at coordinates, and 
 3) 2D map at timestep. 
 
-Currently set up to visualize wave angle; modify to explore other variables. Note: initial terrain and bathymetry blocks nearly identical to [Coastal Hydrodynamics Pre-Processing Tool](https://github.com/Alerovere/CoastalHydrodynamics/tree/main). Also uses [cmcrameri color maps](https://zenodo.org/records/8409685). 
+Currently set up to visualize wave angle; modify to explore other variables. Note: initial terrain and bathymetry blocks nearly identical to [Coastal Hydrodynamics Pre-Processing Tool](https://github.com/Alerovere/CoastalHydrodynamics/tree/main). Also uses [cmcrameri color maps](https://zenodo.org/records/8409685).
+
+## Non-hydrostatic visualizer
+`NHviewer.py` is mostly set up to visualize water levels in non-hydrostatic models where individual waves are resolved. 
+1) Plots timeseries of variable at specific coordinates.
+2) Can save stills at selected timesteps or
+3) string many stills together into a video. 
+
+Note: REQUIRES FFMPEG on the local or virtual system to encode a video.
+<img src="/images/TimeSeries_zs.png.png" alt="zs timeseries" width="300" height="200">
+
