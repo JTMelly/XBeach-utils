@@ -58,5 +58,7 @@ Currently set up to visualize wave angle; modify to explore other variables. Not
 3) string many stills together into a video. 
 
 Note: REQUIRES FFMPEG on the local or virtual system to encode a video.
-<img src="/images/TimeSeries_zs.png.png" alt="zs timeseries" width="300" height="200">
+
+![water level timeseries](/images/TimeSeries_zs.png)
+![water level timeseries](/images/StillNH.png)
 
