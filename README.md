@@ -37,11 +37,15 @@ Take a tide table and hammer it into a format that XBeach likes. Tide files may 
 1) simple tide rises and falls evenly across the offshore boundary; 
 2) offshore boundary corners out of phase inducing longshore currents (assumes rectangular domain).
 
+![tides](/images/Tides.png)
+
 ## Run XBeach repeatedly
 `IterateXBeach.py` runs `xbeach.exe` one time for each *jonswap* file created by `MakeJONSWAPs.py`. *NetCDF* output files are named according to model boundary conditions and collected in a dedicated directory.
 
 ## Compare XBeach models
-Use `CompareModelsXB.py` to compare the results of all the models produced by `IterateXBeach.py`, above. This script scans through all of the *NetCDF* output files in a directory and extracts the solutions at some desired coordinates and for a given timestep. These values are gathered in a dataframe for comparison against expected values and/or graphical visualizaion. 
+Use `CompareModelsXB.py` to compare the results of all the models produced by `IterateXBeach.py`, above. This script scans through all of the *NetCDF* output files in a directory and extracts the solutions at some desired coordinates and for a given timestep. These values are gathered in a dataframe for comparison against expected values and/or graphical visualizaion.
+
+![model comparison heatmap](/images/Heatmap.png)
 
 ## Visualize outputs
 `VisualizeOutputs.py` plots *xboutput.nc* results including: 
@@ -50,6 +54,8 @@ Use `CompareModelsXB.py` to compare the results of all the models produced by `I
 3) 2D map at timestep. 
 
 Currently set up to visualize wave angle; modify to explore other variables. Note: initial terrain and bathymetry blocks nearly identical to [Coastal Hydrodynamics Pre-Processing Tool](https://github.com/Alerovere/CoastalHydrodynamics/tree/main). Also uses [cmcrameri color maps](https://zenodo.org/records/8409685).
+
+![wave angle plot](/images/WaveAngle.png)
 
 ## Non-hydrostatic visualizer
 `NHviewer.py` is mostly set up to visualize water levels in non-hydrostatic models where individual waves are resolved. 
@@ -60,5 +66,5 @@ Currently set up to visualize wave angle; modify to explore other variables. Not
 Note: REQUIRES FFMPEG on the local or virtual system to encode a video.
 
 ![water level timeseries](/images/TimeSeries_zs.png)
-![water level timeseries](/images/StillNH.png)
+![non-hydrostatic still](/images/StillNH.png)
 
