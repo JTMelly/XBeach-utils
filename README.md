@@ -33,7 +33,7 @@ The above list is not comprehensive; a *yaml* file may be forthcoming as time pe
 `MakeJONSWAPs.py` makes a whole mess of *jonswap* files with unique names based on wave boundary conditions. The user supplies arrays of desired wave height, wave period, and wave direction and the script creates a unique file for each permutation. These files can be called later by `IterateXBeach.py` to run XBeach for each combination of wave boundary conditions.
 
 ## Make tides
-Take a tide table and hammer it into a format that XBeach likes. Tide files may come from other tools such as [Coastsat](https://github.com/kvos/CoastSat) or [PyFes](https://github.com/CNES/aviso-fes). Here, two cases are covered: 
+Take a tide table and hammer it into a format that XBeach likes. Tide files may come from other tools such as [Coastsat](https://github.com/kvos/CoastSat), [PyFES](https://github.com/CNES/aviso-fes), or [pyTMD](https://github.com/pyTMD/pyTMD). Here, two cases are covered: 
 1) simple tide rises and falls evenly across the offshore boundary; 
 2) offshore boundary corners out of phase inducing longshore currents (assumes rectangular domain).
 
