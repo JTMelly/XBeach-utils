@@ -28,20 +28,9 @@ The above list is not comprehensive; a *yaml* file may be forthcoming as time pe
 
 `NonErodibleLayer.py` takes a *bed.dep* file and essentially replaces all the elevation values with "0." Saves a new *.dep* file in the same location as the orginal *bed.dep* file. The new file can be called in the XBeach model's *params.txt* file. This will produce the effect of no erosion/sedimentation throughout the model run.
 
-## Make waves
-
-`MakeWaves.py` makes a single *jonswap* file based on a table of satellite altimetry observations. Observations likely come from downloaded data and should include wave height, period and direction along with timestamps. Might be usefule for creating a single model based on a historical event.
-
 ## Make JONSWAP files
 
 `MakeJONSWAPs.py` makes a whole mess of *jonswap* files with unique names based on wave boundary conditions. The user supplies arrays of desired wave height, wave period, and wave direction and the script creates a unique file for each permutation. These files can be called later by `IterateXBeach.py` to run XBeach for each combination of wave boundary conditions.
-
-## Make tides
-Take a tide table and hammer it into a format that XBeach likes. Tide files may come from other tools such as [Coastsat](https://github.com/kvos/CoastSat), [PyFES](https://github.com/CNES/aviso-fes), or [pyTMD](https://github.com/pyTMD/pyTMD). Here, two cases are covered: 
-1) simple tide rises and falls evenly across the offshore boundary; 
-2) offshore boundary corners out of phase inducing longshore currents (assumes rectangular domain).
-
-![tides](/images/Tides.png)
 
 ## Run XBeach repeatedly
 `IterateXBeach.py` runs `xbeach.exe` one time for each *jonswap* file created by `MakeJONSWAPs.py`. *NetCDF* output files are named according to model boundary conditions and collected in a dedicated directory.
