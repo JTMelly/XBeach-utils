@@ -4,17 +4,22 @@
 
 ## Notes:
 
-Some of these tools were modified from the [Coastal Hydrodynamics](https://github.com/Alerovere/CoastalHydrodynamics) toolbox by [Alerovere](https://github.com/Alerovere). Others are loosely based on vibe-coded prototypes that have hopefully been made functional. The goal is a set of small, individual tools that can be used alone or inserted into larger programs.
+Some of these tools were modified from the [Coastal Hydrodynamics](https://github.com/Alerovere/CoastalHydrodynamics) toolbox by [Alerovere](https://github.com/Alerovere) and/or [xbeach-toolbox](https://github.com/openearth/xbeach-toolbox) from [OpeanEarth](https://github.com/openearth). Others are loosely based on vibe-coded prototypes that have hopefully been made functional. The goal is a set of small, individual tools that can be used alone or inserted into larger programs. For basic *XBeach* model setup, such as preparing model bathymetry, try *Delft Dashboard* knockoff [CaorleCruscotto](https://github.com/JTMelly/CaorleCruscotto).
 
 Scripts are mostly *Python* and should work as *Jupyter Notebooks* or in *Colabs* with limited tinkering. Blocks of code are organized into interactive chunks because we debug in production.
 
 To use these tools, some typical packages needed may include:  
-```
-- xarray
-- pandas
-- netcdf4
-- scipy
-```
+
+*   `cmocean`
+*   `cmcrameri`
+*   `matplotlib`
+*   `netcdf4`
+*   `numpy`
+*   `pandas`
+*   `seaborn`
+*   `scipy`
+*   `xarray`
+
 The above list is not comprehensive; a *yaml* file may be forthcoming as time permits. In the meantime, [conda-forge](https://conda-forge.org/) seems like a good option for consistent dependencies.
 
 ## Find breaker depth
@@ -26,7 +31,7 @@ The above list is not comprehensive; a *yaml* file may be forthcoming as time pe
 
 ## Make JONSWAP files
 
-`MakeJONSWAPs.py` makes a whole mess of *jonswap* files with unique names based on wave boundary conditions. The user supplies arrays of desired wave height, wave period, and wave direction and the script creates a unique file for each permutation. These files can be called later by `IterateXBeach.py` to run XBeach for each combination of wave boundary conditions.
+`MakeJONSWAPs.py` makes a whole mess of *jonswap* files with unique names based on wave boundary conditions. The user supplies arrays of desired wave height, wave period, and wave direction, and the script creates a unique file for each permutation. These files can be called later by `IterateXBeach.py` to run XBeach for each combination of wave boundary conditions.
 
 ## Run XBeach repeatedly
 `IterateXBeach.py` runs `xbeach.exe` one time for each *jonswap* file created by `MakeJONSWAPs.py`. *NetCDF* output files are named according to model boundary conditions and collected in a dedicated directory.
